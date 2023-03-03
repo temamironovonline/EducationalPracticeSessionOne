@@ -19,7 +19,7 @@ namespace EducationalPracticeSessionOne
         public string Name_Employee { get; set; }
         public string Midname_Employee { get; set; }
         public int Code_Role { get; set; }
-        public string Login_Employee { get; set; }
+        public string Number_Employee { get; set; }
         public string Password_Employee { get; set; }
     
         public virtual Employee_Roles Employee_Roles { get; set; }

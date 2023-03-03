@@ -16,6 +16,8 @@ namespace EducationalPracticeSessionOne
             InitializeComponent();
             entities = new DBEntities();
             frame = mainFrame;
+
+            frame.Navigate(new LoginPage());
         }
     }
 }

@@ -13,7 +13,7 @@
         <Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="Resources/logo.jpg" Width="200"></Image>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20">
                 <StackPanel Margin="0,0,10,0">
                     <TextBlock Text="Номер" FontSize="20" Margin="0,0,0,10"></TextBlock>
                     <TextBlock Text="Пароль" FontSize="20" Margin="0,0,0,10"></TextBlock>
@@ -21,18 +21,20 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBox Name="phoneInput" Width="150" Height="30" Margin="0,0,0,5"></TextBox>
-                    <TextBox Name="passwordInput" Width="150" Height="30" Margin="0,0,0,5"></TextBox>
+                    <TextBox Name="phoneInput" Width="150" Height="30" Margin="0,0,0,5" KeyDown="phoneInput_KeyDown"></TextBox>
+                    <TextBox Name="passwordInput" Width="150" Height="30" Margin="0,0,0,5" IsEnabled="False" KeyDown="passwordInput_KeyDown"></TextBox>
                     <WrapPanel>
-                        <TextBox Name="codeInput" Width="100" Height="30" Margin="0,0,10,0"></TextBox>
-                        <Image Width="30" Source="Resources/updateCode.png"></Image>
+                        <TextBox Name="codeInput" Width="100" Height="30" Margin="0,0,10,0" IsEnabled="False"></TextBox>
+                        <Button Name="refreshButton" Width="30" IsEnabled="False">
+                            <Image Source="Resources/updateCode.png"></Image>
+                        </Button>
                     </WrapPanel>
                 </StackPanel>
             </WrapPanel>
 
             <WrapPanel>
                 <Button Name="cancelButton" Content="Отмена" FontSize="20" Width="100" Margin="0,0,10,0"></Button>
-                <Button Name="enterButton" Content="Войти" FontSize="20" Width="100"></Button>
+                <Button Name="enterButton" Content="Войти" FontSize="20" Width="100" IsEnabled="False"></Button>
             </WrapPanel>
         </StackPanel>
     </Grid>
