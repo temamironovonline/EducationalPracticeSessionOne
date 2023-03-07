@@ -12,18 +12,16 @@ namespace EducationalPracticeSessionOne
     public partial class CaptchaFieldWindow : Window
     {
 
-        private string _captchaWord = "";
-        private int _errorCode = 0;
+        private static string _captchaWord = "";
 
         public CaptchaFieldWindow()
         {
-
             InitializeComponent();
 
             const string symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghigklmnopqrstuvwxyz!@#$%^&*()";
 
             Random random = new Random();
-            int countSymbols = random.Next(7, 11);
+            int countSymbols = random.Next(8,9);
 
             for (int i = 0; i < countSymbols; i++)
             {
@@ -70,10 +68,11 @@ namespace EducationalPracticeSessionOne
                 x1 = x2 + 5;
                 x2 += Convert.ToInt32(can.Width / countSymbols);
                 can.Children.Add(textBlock);
-
             }
-
-
+        }
+        public static string getCode()
+        {
+            return _captchaWord;
         }
     }
 }
